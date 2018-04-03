@@ -1,12 +1,6 @@
 {
   "ant/tab/tab.js": "/public/js/ant/tab/tab.js",
   "ant/tab/tab.css": "/public/css/ant/tab/tab.css",
-  "css/module/module.js": "/public/js/css/module/module.js",
-  "css/module/module.css": "/public/css/css/module/module.css",
-  "hello/component.js": "/public/js/hello/component.js",
-  "hello/component.css": "/public/css/hello/component.css",
-  "hello/element.js": "/public/js/hello/element.js",
-  "hello/element.css": "/public/css/hello/element.css",
   "home/home.js": "/public/js/home/home.js",
   "home/home.css": "/public/css/home/home.css",
   "layout.js": "/public/js/layout.js",
@@ -16,42 +10,21 @@
   "spa/redux.css": "/public/css/spa/redux.css",
   "spa/ssr.js": "/public/js/spa/ssr.js",
   "spa/ssr.css": "/public/css/spa/ssr.css",
-  "img/loading.gif": "/public/img/loading.gif",
+  "js/vendor.js": "/public/js/vendor.js",
+  "vendor.js": "/public/js/vendor.js",
   "deps": {
     "ant/tab/tab.js": {
       "js": [
+        "/public/js/vendor.js",
         "/public/js/ant/tab/tab.js"
       ],
       "css": [
         "/public/css/ant/tab/tab.css"
       ]
     },
-    "css/module/module.js": {
-      "js": [
-        "/public/js/css/module/module.js"
-      ],
-      "css": [
-        "/public/css/css/module/module.css"
-      ]
-    },
-    "hello/component.js": {
-      "js": [
-        "/public/js/hello/component.js"
-      ],
-      "css": [
-        "/public/css/hello/component.css"
-      ]
-    },
-    "hello/element.js": {
-      "js": [
-        "/public/js/hello/element.js"
-      ],
-      "css": [
-        "/public/css/hello/element.css"
-      ]
-    },
     "home/home.js": {
       "js": [
+        "/public/js/vendor.js",
         "/public/js/home/home.js"
       ],
       "css": [
@@ -60,6 +33,7 @@
     },
     "spa/client.js": {
       "js": [
+        "/public/js/vendor.js",
         "/public/js/spa/client.js"
       ],
       "css": [
@@ -68,6 +42,7 @@
     },
     "spa/redux.js": {
       "js": [
+        "/public/js/vendor.js",
         "/public/js/spa/redux.js"
       ],
       "css": [
@@ -76,6 +51,7 @@
     },
     "spa/ssr.js": {
       "js": [
+        "/public/js/vendor.js",
         "/public/js/spa/ssr.js"
       ],
       "css": [
@@ -84,6 +60,7 @@
     },
     "layout.js": {
       "js": [
+        "/public/js/vendor.js",
         "/public/js/layout.js"
       ],
       "css": []

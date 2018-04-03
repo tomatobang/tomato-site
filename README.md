@@ -1,5 +1,5 @@
 # tomato-site
-website for tomato bang 
+website for tomatobang 
 
 ### License
 Mozilla Public License 2.0

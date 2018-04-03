@@ -32,71 +32,6 @@
       "GET"
     ],
     "paramNames": [],
-    "path": "/hello/element",
-    "regexp": "/^\\/hello\\/element(?:\\/(?=$))?$/",
-    "stack": [
-      "wrappedController"
-    ]
-  },
-  {
-    "name": null,
-    "methods": [
-      "HEAD",
-      "GET"
-    ],
-    "paramNames": [],
-    "path": "/hello/component",
-    "regexp": "/^\\/hello\\/component(?:\\/(?=$))?$/",
-    "stack": [
-      "wrappedController"
-    ]
-  },
-  {
-    "name": null,
-    "methods": [
-      "HEAD",
-      "GET"
-    ],
-    "paramNames": [],
-    "path": "/css/module",
-    "regexp": "/^\\/css\\/module(?:\\/(?=$))?$/",
-    "stack": [
-      "wrappedController"
-    ]
-  },
-  {
-    "name": null,
-    "methods": [
-      "HEAD",
-      "GET"
-    ],
-    "paramNames": [],
-    "path": "/ant/tab",
-    "regexp": "/^\\/ant\\/tab(?:\\/(?=$))?$/",
-    "stack": [
-      "wrappedController"
-    ]
-  },
-  {
-    "name": null,
-    "methods": [
-      "HEAD",
-      "GET"
-    ],
-    "paramNames": [],
-    "path": "/element",
-    "regexp": "/^\\/element(?:\\/(?=$))?$/",
-    "stack": [
-      "wrappedController"
-    ]
-  },
-  {
-    "name": null,
-    "methods": [
-      "HEAD",
-      "GET"
-    ],
-    "paramNames": [],
     "path": "/pager",
     "regexp": "/^\\/pager(?:\\/(?=$))?$/",
     "stack": [
@@ -112,19 +47,6 @@
     "paramNames": [],
     "path": "/about",
     "regexp": "/^\\/about(?:\\/(?=$))?$/",
-    "stack": [
-      "wrappedController"
-    ]
-  },
-  {
-    "name": null,
-    "methods": [
-      "HEAD",
-      "GET"
-    ],
-    "paramNames": [],
-    "path": "/router",
-    "regexp": "/^\\/router(?:\\/(?=$))?$/",
     "stack": [
       "wrappedController"
     ]

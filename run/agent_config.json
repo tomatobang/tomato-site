@@ -185,24 +185,6 @@
               "D:\\git\\tomato-site\\node_modules\\_easywebpack@4.2.4@easywebpack\\utils\\hot.js",
               "babel-loader!D:\\git\\tomato-site\\app\\web\\framework\\entry\\client-loader.js!D:\\git\\tomato-site\\app\\web\\page\\ant\\tab\\tab.jsx"
             ],
-            "css/module/module": [
-              "react-hot-loader/patch",
-              "D:\\git\\tomato-site\\node_modules\\_webpack-hot-middleware@2.21.2@webpack-hot-middleware/client?path=http://127.0.0.1:9000/__webpack_hmr&noInfo=false&reload=false&quiet=false",
-              "D:\\git\\tomato-site\\node_modules\\_easywebpack@4.2.4@easywebpack\\utils\\hot.js",
-              "babel-loader!D:\\git\\tomato-site\\app\\web\\framework\\entry\\client-loader.js!D:\\git\\tomato-site\\app\\web\\page\\css\\module\\module.jsx"
-            ],
-            "hello/component": [
-              "react-hot-loader/patch",
-              "D:\\git\\tomato-site\\node_modules\\_webpack-hot-middleware@2.21.2@webpack-hot-middleware/client?path=http://127.0.0.1:9000/__webpack_hmr&noInfo=false&reload=false&quiet=false",
-              "D:\\git\\tomato-site\\node_modules\\_easywebpack@4.2.4@easywebpack\\utils\\hot.js",
-              "babel-loader!D:\\git\\tomato-site\\app\\web\\framework\\entry\\client-loader.js!D:\\git\\tomato-site\\app\\web\\page\\hello\\component.jsx"
-            ],
-            "hello/element": [
-              "react-hot-loader/patch",
-              "D:\\git\\tomato-site\\node_modules\\_webpack-hot-middleware@2.21.2@webpack-hot-middleware/client?path=http://127.0.0.1:9000/__webpack_hmr&noInfo=false&reload=false&quiet=false",
-              "D:\\git\\tomato-site\\node_modules\\_easywebpack@4.2.4@easywebpack\\utils\\hot.js",
-              "babel-loader!D:\\git\\tomato-site\\app\\web\\framework\\entry\\client-loader.js!D:\\git\\tomato-site\\app\\web\\page\\hello\\element.jsx"
-            ],
             "home/home": [
               "react-hot-loader/patch",
               "D:\\git\\tomato-site\\node_modules\\_webpack-hot-middleware@2.21.2@webpack-hot-middleware/client?path=http://127.0.0.1:9000/__webpack_hmr&noInfo=false&reload=false&quiet=false",
@@ -450,7 +432,15 @@
                   "names": [
                     "vendor"
                   ],
-                  "chunks": [],
+                  "chunks": [
+                    {
+                      "id": "vendor.js",
+                      "name": "vendor",
+                      "outputName": "js/vendor.js",
+                      "outputPath": "/public/js/vendor.js",
+                      "filepath": "C:\\Users\\kobepeng\\AppData\\Local\\Temp\\easywebpack\\tomato-site\\dev\\dll\\file\\js\\vendor.js"
+                    }
+                  ],
                   "dll": [
                     {
                       "name": "vendor",
@@ -477,6 +467,159 @@
               },
               "__plugin__": "extract-text-webpack-plugin",
               "__lable__": "extract"
+            },
+            {
+              "opts": {
+                "assets": [
+                  {
+                    "id": "vendor.js",
+                    "name": "vendor",
+                    "outputName": "js/vendor.js",
+                    "outputPath": "/public/js/vendor.js",
+                    "filepath": "C:\\Users\\kobepeng\\AppData\\Local\\Temp\\easywebpack\\tomato-site\\dev\\dll\\file\\js\\vendor.js"
+                  }
+                ]
+              },
+              "__plugin__": "AssetFileWebpackPlugin",
+              "__lable__": "dllAsset"
+            },
+            {
+              "options": {
+                "context": "D:\\git\\tomato-site",
+                "manifest": {
+                  "name": "vendor",
+                  "content": {
+                    "./node_modules/_fbjs@0.8.16@fbjs/lib/shallowEqual.js": {
+                      "id": "./node_modules/_fbjs@0.8.16@fbjs/lib/shallowEqual.js",
+                      "buildMeta": {
+                        "providedExports": true
+                      }
+                    },
+                    "./node_modules/_react-dom@16.3.0@react-dom/index.js": {
+                      "id": "./node_modules/_react-dom@16.3.0@react-dom/index.js",
+                      "buildMeta": {
+                        "providedExports": true
+                      }
+                    },
+                    "./node_modules/_react-dom@16.3.0@react-dom/cjs/react-dom.development.js": {
+                      "id": "./node_modules/_react-dom@16.3.0@react-dom/cjs/react-dom.development.js",
+                      "buildMeta": {
+                        "providedExports": true
+                      }
+                    },
+                    "./node_modules/_fbjs@0.8.16@fbjs/lib/invariant.js": {
+                      "id": "./node_modules/_fbjs@0.8.16@fbjs/lib/invariant.js",
+                      "buildMeta": {
+                        "providedExports": true
+                      }
+                    },
+                    "./node_modules/_fbjs@0.8.16@fbjs/lib/warning.js": {
+                      "id": "./node_modules/_fbjs@0.8.16@fbjs/lib/warning.js",
+                      "buildMeta": {
+                        "providedExports": true
+                      }
+                    },
+                    "./node_modules/_fbjs@0.8.16@fbjs/lib/ExecutionEnvironment.js": {
+                      "id": "./node_modules/_fbjs@0.8.16@fbjs/lib/ExecutionEnvironment.js",
+                      "buildMeta": {
+                        "providedExports": true
+                      }
+                    },
+                    "./node_modules/_object-assign@4.1.1@object-assign/index.js": {
+                      "id": "./node_modules/_object-assign@4.1.1@object-assign/index.js",
+                      "buildMeta": {
+                        "providedExports": true
+                      }
+                    },
+                    "./node_modules/_fbjs@0.8.16@fbjs/lib/emptyFunction.js": {
+                      "id": "./node_modules/_fbjs@0.8.16@fbjs/lib/emptyFunction.js",
+                      "buildMeta": {
+                        "providedExports": true
+                      }
+                    },
+                    "./node_modules/_prop-types@15.6.1@prop-types/checkPropTypes.js": {
+                      "id": "./node_modules/_prop-types@15.6.1@prop-types/checkPropTypes.js",
+                      "buildMeta": {
+                        "providedExports": true
+                      }
+                    },
+                    "./node_modules/_fbjs@0.8.16@fbjs/lib/getActiveElement.js": {
+                      "id": "./node_modules/_fbjs@0.8.16@fbjs/lib/getActiveElement.js",
+                      "buildMeta": {
+                        "providedExports": true
+                      }
+                    },
+                    "./node_modules/_react@16.3.0@react/index.js": {
+                      "id": "./node_modules/_react@16.3.0@react/index.js",
+                      "buildMeta": {
+                        "providedExports": true
+                      }
+                    },
+                    "./node_modules/_fbjs@0.8.16@fbjs/lib/containsNode.js": {
+                      "id": "./node_modules/_fbjs@0.8.16@fbjs/lib/containsNode.js",
+                      "buildMeta": {
+                        "providedExports": true
+                      }
+                    },
+                    "./node_modules/_fbjs@0.8.16@fbjs/lib/emptyObject.js": {
+                      "id": "./node_modules/_fbjs@0.8.16@fbjs/lib/emptyObject.js",
+                      "buildMeta": {
+                        "providedExports": true
+                      }
+                    },
+                    "./node_modules/_fbjs@0.8.16@fbjs/lib/hyphenateStyleName.js": {
+                      "id": "./node_modules/_fbjs@0.8.16@fbjs/lib/hyphenateStyleName.js",
+                      "buildMeta": {
+                        "providedExports": true
+                      }
+                    },
+                    "./node_modules/_fbjs@0.8.16@fbjs/lib/camelizeStyleName.js": {
+                      "id": "./node_modules/_fbjs@0.8.16@fbjs/lib/camelizeStyleName.js",
+                      "buildMeta": {
+                        "providedExports": true
+                      }
+                    },
+                    "./node_modules/_fbjs@0.8.16@fbjs/lib/camelize.js": {
+                      "id": "./node_modules/_fbjs@0.8.16@fbjs/lib/camelize.js",
+                      "buildMeta": {
+                        "providedExports": true
+                      }
+                    },
+                    "./node_modules/_fbjs@0.8.16@fbjs/lib/hyphenate.js": {
+                      "id": "./node_modules/_fbjs@0.8.16@fbjs/lib/hyphenate.js",
+                      "buildMeta": {
+                        "providedExports": true
+                      }
+                    },
+                    "./node_modules/_fbjs@0.8.16@fbjs/lib/isTextNode.js": {
+                      "id": "./node_modules/_fbjs@0.8.16@fbjs/lib/isTextNode.js",
+                      "buildMeta": {
+                        "providedExports": true
+                      }
+                    },
+                    "./node_modules/_fbjs@0.8.16@fbjs/lib/isNode.js": {
+                      "id": "./node_modules/_fbjs@0.8.16@fbjs/lib/isNode.js",
+                      "buildMeta": {
+                        "providedExports": true
+                      }
+                    },
+                    "./node_modules/_prop-types@15.6.1@prop-types/lib/ReactPropTypesSecret.js": {
+                      "id": "./node_modules/_prop-types@15.6.1@prop-types/lib/ReactPropTypesSecret.js",
+                      "buildMeta": {
+                        "providedExports": true
+                      }
+                    },
+                    "./node_modules/_react@16.3.0@react/cjs/react.development.js": {
+                      "id": "./node_modules/_react@16.3.0@react/cjs/react.development.js",
+                      "buildMeta": {
+                        "providedExports": true
+                      }
+                    }
+                  }
+                }
+              },
+              "__plugin__": "DllReferencePlugin",
+              "__lable__": "vendorDllReference"
             }
           ]
         },
@@ -484,9 +627,6 @@
           "context": "D:\\git\\tomato-site",
           "entry": {
             "ant/tab/tab": "babel-loader!D:\\git\\tomato-site\\app\\web\\framework\\entry\\server-loader.js!D:\\git\\tomato-site\\app\\web\\page\\ant\\tab\\tab.jsx",
-            "css/module/module": "babel-loader!D:\\git\\tomato-site\\app\\web\\framework\\entry\\server-loader.js!D:\\git\\tomato-site\\app\\web\\page\\css\\module\\module.jsx",
-            "hello/component": "babel-loader!D:\\git\\tomato-site\\app\\web\\framework\\entry\\server-loader.js!D:\\git\\tomato-site\\app\\web\\page\\hello\\component.jsx",
-            "hello/element": "babel-loader!D:\\git\\tomato-site\\app\\web\\framework\\entry\\server-loader.js!D:\\git\\tomato-site\\app\\web\\page\\hello\\element.jsx",
             "home/home": "babel-loader!D:\\git\\tomato-site\\app\\web\\framework\\entry\\server-loader.js!D:\\git\\tomato-site\\app\\web\\page\\home\\home.jsx",
             "spa/client": "D:\\git\\tomato-site\\app\\web\\page\\spa\\client.jsx",
             "spa/redux": "D:\\git\\tomato-site\\app\\web\\page\\spa\\redux.jsx",
