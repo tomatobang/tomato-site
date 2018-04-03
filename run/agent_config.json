@@ -51,6 +51,10 @@
       "nosniff": {
         "enable": true
       },
+      "referrerPolicy": {
+        "enable": false,
+        "value": "no-referrer-when-downgrade"
+      },
       "xssProtection": {
         "enable": true,
         "value": "1; mode=block"
@@ -58,6 +62,10 @@
       "csp": {
         "enable": false,
         "policy": {}
+      },
+      "ssrf": {
+        "ipBlackList": null,
+        "checkAddress": null
       }
     },
     "helper": {
@@ -113,6 +121,12 @@
       "reloadOnDebug": true,
       "overrideDefault": false
     },
+    "customLogger": {
+      "scheduleLogger": {
+        "consoleLevel": "NONE",
+        "file": "D:\\git\\tomato-site\\logs\\tomato-site\\egg-schedule.log"
+      }
+    },
     "logrotator": {
       "filesRotateByHour": null,
       "hourDelimiter": "-",
@@ -157,13 +171,9 @@
     "cors": {},
     "webpack": {
       "port": 9000,
-      "proxy": true,
-      "proxyMapping": {
-        "js": "text/javascript; charset=UTF-8",
-        "css": "text/css; charset=UTF-8",
-        "json": "application/json; charset=UTF-8",
-        "html": "text/html; charset=UTF-8",
-        "map": "application/json; charset=UTF-8"
+      "proxy": {
+        "host": "http://127.0.0.1:9000",
+        "match": "/^\\/public\\//"
       },
       "webpackConfigList": [
         {
@@ -171,56 +181,56 @@
           "entry": {
             "ant/tab/tab": [
               "react-hot-loader/patch",
-              "D:\\git\\tomato-site\\node_modules\\_webpack-hot-middleware@2.21.0@webpack-hot-middleware/client?path=http://127.0.0.1:9000/__webpack_hmr&noInfo=false&reload=false&quiet=false",
-              "D:\\git\\tomato-site\\node_modules\\_easywebpack@3.5.13@easywebpack\\utils\\hot.js",
-              "babel-loader!D:\\git\\tomato-site\\app\\web\\framework\\entry\\client-loader.js!/git/tomato-site/app/web/page/ant/tab/tab.jsx"
+              "D:\\git\\tomato-site\\node_modules\\_webpack-hot-middleware@2.21.2@webpack-hot-middleware/client?path=http://127.0.0.1:9000/__webpack_hmr&noInfo=false&reload=false&quiet=false",
+              "D:\\git\\tomato-site\\node_modules\\_easywebpack@4.2.4@easywebpack\\utils\\hot.js",
+              "babel-loader!D:\\git\\tomato-site\\app\\web\\framework\\entry\\client-loader.js!D:\\git\\tomato-site\\app\\web\\page\\ant\\tab\\tab.jsx"
             ],
             "css/module/module": [
               "react-hot-loader/patch",
-              "D:\\git\\tomato-site\\node_modules\\_webpack-hot-middleware@2.21.0@webpack-hot-middleware/client?path=http://127.0.0.1:9000/__webpack_hmr&noInfo=false&reload=false&quiet=false",
-              "D:\\git\\tomato-site\\node_modules\\_easywebpack@3.5.13@easywebpack\\utils\\hot.js",
-              "babel-loader!D:\\git\\tomato-site\\app\\web\\framework\\entry\\client-loader.js!/git/tomato-site/app/web/page/css/module/module.jsx"
+              "D:\\git\\tomato-site\\node_modules\\_webpack-hot-middleware@2.21.2@webpack-hot-middleware/client?path=http://127.0.0.1:9000/__webpack_hmr&noInfo=false&reload=false&quiet=false",
+              "D:\\git\\tomato-site\\node_modules\\_easywebpack@4.2.4@easywebpack\\utils\\hot.js",
+              "babel-loader!D:\\git\\tomato-site\\app\\web\\framework\\entry\\client-loader.js!D:\\git\\tomato-site\\app\\web\\page\\css\\module\\module.jsx"
             ],
             "hello/component": [
               "react-hot-loader/patch",
-              "D:\\git\\tomato-site\\node_modules\\_webpack-hot-middleware@2.21.0@webpack-hot-middleware/client?path=http://127.0.0.1:9000/__webpack_hmr&noInfo=false&reload=false&quiet=false",
-              "D:\\git\\tomato-site\\node_modules\\_easywebpack@3.5.13@easywebpack\\utils\\hot.js",
-              "babel-loader!D:\\git\\tomato-site\\app\\web\\framework\\entry\\client-loader.js!/git/tomato-site/app/web/page/hello/component.jsx"
+              "D:\\git\\tomato-site\\node_modules\\_webpack-hot-middleware@2.21.2@webpack-hot-middleware/client?path=http://127.0.0.1:9000/__webpack_hmr&noInfo=false&reload=false&quiet=false",
+              "D:\\git\\tomato-site\\node_modules\\_easywebpack@4.2.4@easywebpack\\utils\\hot.js",
+              "babel-loader!D:\\git\\tomato-site\\app\\web\\framework\\entry\\client-loader.js!D:\\git\\tomato-site\\app\\web\\page\\hello\\component.jsx"
             ],
             "hello/element": [
               "react-hot-loader/patch",
-              "D:\\git\\tomato-site\\node_modules\\_webpack-hot-middleware@2.21.0@webpack-hot-middleware/client?path=http://127.0.0.1:9000/__webpack_hmr&noInfo=false&reload=false&quiet=false",
-              "D:\\git\\tomato-site\\node_modules\\_easywebpack@3.5.13@easywebpack\\utils\\hot.js",
-              "babel-loader!D:\\git\\tomato-site\\app\\web\\framework\\entry\\client-loader.js!/git/tomato-site/app/web/page/hello/element.jsx"
+              "D:\\git\\tomato-site\\node_modules\\_webpack-hot-middleware@2.21.2@webpack-hot-middleware/client?path=http://127.0.0.1:9000/__webpack_hmr&noInfo=false&reload=false&quiet=false",
+              "D:\\git\\tomato-site\\node_modules\\_easywebpack@4.2.4@easywebpack\\utils\\hot.js",
+              "babel-loader!D:\\git\\tomato-site\\app\\web\\framework\\entry\\client-loader.js!D:\\git\\tomato-site\\app\\web\\page\\hello\\element.jsx"
             ],
             "home/home": [
               "react-hot-loader/patch",
-              "D:\\git\\tomato-site\\node_modules\\_webpack-hot-middleware@2.21.0@webpack-hot-middleware/client?path=http://127.0.0.1:9000/__webpack_hmr&noInfo=false&reload=false&quiet=false",
-              "D:\\git\\tomato-site\\node_modules\\_easywebpack@3.5.13@easywebpack\\utils\\hot.js",
-              "babel-loader!D:\\git\\tomato-site\\app\\web\\framework\\entry\\client-loader.js!/git/tomato-site/app/web/page/home/home.jsx"
+              "D:\\git\\tomato-site\\node_modules\\_webpack-hot-middleware@2.21.2@webpack-hot-middleware/client?path=http://127.0.0.1:9000/__webpack_hmr&noInfo=false&reload=false&quiet=false",
+              "D:\\git\\tomato-site\\node_modules\\_easywebpack@4.2.4@easywebpack\\utils\\hot.js",
+              "babel-loader!D:\\git\\tomato-site\\app\\web\\framework\\entry\\client-loader.js!D:\\git\\tomato-site\\app\\web\\page\\home\\home.jsx"
             ],
             "spa/client": [
               "react-hot-loader/patch",
-              "D:\\git\\tomato-site\\node_modules\\_webpack-hot-middleware@2.21.0@webpack-hot-middleware/client?path=http://127.0.0.1:9000/__webpack_hmr&noInfo=false&reload=false&quiet=false",
-              "D:\\git\\tomato-site\\node_modules\\_easywebpack@3.5.13@easywebpack\\utils\\hot.js",
+              "D:\\git\\tomato-site\\node_modules\\_webpack-hot-middleware@2.21.2@webpack-hot-middleware/client?path=http://127.0.0.1:9000/__webpack_hmr&noInfo=false&reload=false&quiet=false",
+              "D:\\git\\tomato-site\\node_modules\\_easywebpack@4.2.4@easywebpack\\utils\\hot.js",
               "D:\\git\\tomato-site\\app\\web\\page\\spa\\client.jsx"
             ],
             "spa/redux": [
               "react-hot-loader/patch",
-              "D:\\git\\tomato-site\\node_modules\\_webpack-hot-middleware@2.21.0@webpack-hot-middleware/client?path=http://127.0.0.1:9000/__webpack_hmr&noInfo=false&reload=false&quiet=false",
-              "D:\\git\\tomato-site\\node_modules\\_easywebpack@3.5.13@easywebpack\\utils\\hot.js",
+              "D:\\git\\tomato-site\\node_modules\\_webpack-hot-middleware@2.21.2@webpack-hot-middleware/client?path=http://127.0.0.1:9000/__webpack_hmr&noInfo=false&reload=false&quiet=false",
+              "D:\\git\\tomato-site\\node_modules\\_easywebpack@4.2.4@easywebpack\\utils\\hot.js",
               "D:\\git\\tomato-site\\app\\web\\page\\spa\\redux.jsx"
             ],
             "spa/ssr": [
               "react-hot-loader/patch",
-              "D:\\git\\tomato-site\\node_modules\\_webpack-hot-middleware@2.21.0@webpack-hot-middleware/client?path=http://127.0.0.1:9000/__webpack_hmr&noInfo=false&reload=false&quiet=false",
-              "D:\\git\\tomato-site\\node_modules\\_easywebpack@3.5.13@easywebpack\\utils\\hot.js",
+              "D:\\git\\tomato-site\\node_modules\\_webpack-hot-middleware@2.21.2@webpack-hot-middleware/client?path=http://127.0.0.1:9000/__webpack_hmr&noInfo=false&reload=false&quiet=false",
+              "D:\\git\\tomato-site\\node_modules\\_easywebpack@4.2.4@easywebpack\\utils\\hot.js",
               "D:\\git\\tomato-site\\app\\web\\page\\spa\\ssr.jsx"
             ],
             "layout": [
               "react-hot-loader/patch",
-              "D:\\git\\tomato-site\\node_modules\\_webpack-hot-middleware@2.21.0@webpack-hot-middleware/client?path=http://127.0.0.1:9000/__webpack_hmr&noInfo=false&reload=false&quiet=false",
-              "D:\\git\\tomato-site\\node_modules\\_easywebpack@3.5.13@easywebpack\\utils\\hot.js",
+              "D:\\git\\tomato-site\\node_modules\\_webpack-hot-middleware@2.21.2@webpack-hot-middleware/client?path=http://127.0.0.1:9000/__webpack_hmr&noInfo=false&reload=false&quiet=false",
+              "D:\\git\\tomato-site\\node_modules\\_easywebpack@4.2.4@easywebpack\\utils\\hot.js",
               "D:\\git\\tomato-site\\app\\web\\framework\\layout\\layout.jsx"
             ]
           },
@@ -228,7 +238,7 @@
             "filename": "js/[name].js",
             "chunkFilename": "js/chunk/[name].js",
             "path": "D:\\git\\tomato-site\\public",
-            "publicPath": "http://127.0.0.1:9000/public/"
+            "publicPath": "/public/"
           },
           "resolve": {
             "extensions": [
@@ -246,11 +256,16 @@
           "resolveLoader": {
             "modules": [
               "D:\\git\\tomato-site\\node_modules",
-              "D:\\git\\tomato-site\\node_modules\\_easywebpack@3.5.13@easywebpack\\node_modules",
-              "D:\\git\\tomato-site\\node_modules\\_easywebpack-react@3.5.0@easywebpack-react\\node_modules"
+              "D:\\git\\tomato-site\\node_modules\\_easywebpack@4.2.4@easywebpack\\node_modules",
+              "D:\\git\\tomato-site\\node_modules\\_easywebpack-react@4.0.0@easywebpack-react\\node_modules"
             ]
           },
+          "mode": "development",
           "target": "web",
+          "cache": true,
+          "optimization": {
+            "minimize": false
+          },
           "module": {
             "rules": [
               {
@@ -258,7 +273,8 @@
                 "exclude": {},
                 "use": [
                   {
-                    "loader": "babel-loader"
+                    "loader": "babel-loader",
+                    "options": {}
                   }
                 ]
               },
@@ -266,7 +282,8 @@
                 "test": {},
                 "use": [
                   {
-                    "loader": "eslint-loader"
+                    "loader": "eslint-loader",
+                    "options": {}
                   }
                 ],
                 "exclude": {},
@@ -276,7 +293,7 @@
                 "test": {},
                 "use": [
                   {
-                    "loader": "D:\\git\\tomato-site\\node_modules\\_extract-text-webpack-plugin@3.0.2@extract-text-webpack-plugin\\dist\\loader.js",
+                    "loader": "D:\\git\\tomato-site\\node_modules\\_extract-text-webpack-plugin@4.0.0-beta.0@extract-text-webpack-plugin\\dist\\loader.js",
                     "options": {
                       "omit": 1,
                       "remove": true
@@ -287,75 +304,11 @@
                   },
                   {
                     "loader": "css-loader",
-                    "options": {
-                      "minimize": false
-                    }
+                    "options": {}
                   },
                   {
-                    "loader": "postcss-loader"
-                  }
-                ],
-                "exclude": [
-                  "D:\\git\\tomato-site\\app\\web\\page\\css\\module"
-                ]
-              },
-              {
-                "test": {},
-                "use": [
-                  {
-                    "loader": "D:\\git\\tomato-site\\node_modules\\_extract-text-webpack-plugin@3.0.2@extract-text-webpack-plugin\\dist\\loader.js",
-                    "options": {
-                      "omit": 1,
-                      "remove": true
-                    }
-                  },
-                  {
-                    "loader": "style-loader"
-                  },
-                  {
-                    "loader": "css-loader",
-                    "options": {
-                      "minimize": false
-                    }
-                  },
-                  {
-                    "loader": "postcss-loader"
-                  },
-                  {
-                    "loader": "sass-loader"
-                  }
-                ],
-                "exclude": [
-                  "D:\\git\\tomato-site\\app\\web\\page\\css\\module"
-                ]
-              },
-              {
-                "test": {},
-                "use": [
-                  {
-                    "loader": "D:\\git\\tomato-site\\node_modules\\_extract-text-webpack-plugin@3.0.2@extract-text-webpack-plugin\\dist\\loader.js",
-                    "options": {
-                      "omit": 1,
-                      "remove": true
-                    }
-                  },
-                  {
-                    "loader": "style-loader"
-                  },
-                  {
-                    "loader": "css-loader",
-                    "options": {
-                      "minimize": false
-                    }
-                  },
-                  {
-                    "loader": "postcss-loader"
-                  },
-                  {
-                    "loader": "sass-loader",
-                    "options": {
-                      "indentedSyntax": true
-                    }
+                    "loader": "postcss-loader",
+                    "options": {}
                   }
                 ],
                 "exclude": [
@@ -381,6 +334,18 @@
                     "loader": "url-loader",
                     "options": {
                       "limit": 1024,
+                      "name": "media/[name].[ext]"
+                    }
+                  }
+                ]
+              },
+              {
+                "test": {},
+                "use": [
+                  {
+                    "loader": "url-loader",
+                    "options": {
+                      "limit": 1024,
                       "name": "font/[name].[ext]"
                     }
                   }
@@ -390,7 +355,7 @@
                 "test": {},
                 "use": [
                   {
-                    "loader": "D:\\git\\tomato-site\\node_modules\\_extract-text-webpack-plugin@3.0.2@extract-text-webpack-plugin\\dist\\loader.js",
+                    "loader": "D:\\git\\tomato-site\\node_modules\\_extract-text-webpack-plugin@4.0.0-beta.0@extract-text-webpack-plugin\\dist\\loader.js",
                     "options": {
                       "omit": 1,
                       "remove": true
@@ -403,79 +368,12 @@
                     "loader": "css-loader",
                     "options": {
                       "modules": true,
-                      "importLoaders": 1,
-                      "minimize": false
+                      "importLoaders": 1
                     }
                   },
                   {
-                    "loader": "postcss-loader"
-                  }
-                ],
-                "include": [
-                  "D:\\git\\tomato-site\\app\\web\\page\\css\\module"
-                ]
-              },
-              {
-                "test": {},
-                "use": [
-                  {
-                    "loader": "D:\\git\\tomato-site\\node_modules\\_extract-text-webpack-plugin@3.0.2@extract-text-webpack-plugin\\dist\\loader.js",
-                    "options": {
-                      "omit": 1,
-                      "remove": true
-                    }
-                  },
-                  {
-                    "loader": "style-loader"
-                  },
-                  {
-                    "loader": "css-loader",
-                    "options": {
-                      "modules": true,
-                      "importLoaders": 2,
-                      "minimize": false
-                    }
-                  },
-                  {
-                    "loader": "postcss-loader"
-                  },
-                  {
-                    "loader": "sass-loader"
-                  }
-                ],
-                "include": [
-                  "D:\\git\\tomato-site\\app\\web\\page\\css\\module"
-                ]
-              },
-              {
-                "test": {},
-                "use": [
-                  {
-                    "loader": "D:\\git\\tomato-site\\node_modules\\_extract-text-webpack-plugin@3.0.2@extract-text-webpack-plugin\\dist\\loader.js",
-                    "options": {
-                      "omit": 1,
-                      "remove": true
-                    }
-                  },
-                  {
-                    "loader": "style-loader"
-                  },
-                  {
-                    "loader": "css-loader",
-                    "options": {
-                      "modules": true,
-                      "importLoaders": 2,
-                      "minimize": false
-                    }
-                  },
-                  {
-                    "loader": "postcss-loader"
-                  },
-                  {
-                    "loader": "sass-loader",
-                    "options": {
-                      "indentedSyntax": true
-                    }
+                    "loader": "postcss-loader",
+                    "options": {}
                   }
                 ],
                 "include": [
@@ -486,8 +384,11 @@
           },
           "plugins": [
             {
-              "__plugin__": "NoEmitOnErrorsPlugin",
-              "__lable__": "error"
+              "options": {},
+              "fullBuildTimeout": 200,
+              "requestTimeout": 10000,
+              "__plugin__": "HotModuleReplacementPlugin",
+              "__lable__": "hot"
             },
             {
               "definitions": {},
@@ -495,49 +396,20 @@
               "__lable__": "provide"
             },
             {
-              "options": {},
-              "__plugin__": "NamedModulesPlugin",
-              "__lable__": "nameModule"
-            },
-            {
               "definitions": {
                 "process.env.NODE_ENV": "\"development\"",
+                "EASY_ENV": "\"dev\"",
                 "EASY_ENV_IS_DEV": true,
                 "EASY_ENV_IS_TEST": false,
                 "EASY_ENV_IS_PROD": false,
                 "EASY_ENV_IS_BROWSER": true,
                 "EASY_ENV_IS_NODE": false,
-                "EASY_ENV_PUBLIC_PATH": "\"http://127.0.0.1:9000/public/\"",
+                "EASY_ENV_LOCAL_PUBLIC_PATH": "\"/public/\"",
+                "EASY_ENV_PUBLIC_PATH": "\"/public/\"",
                 "EASY_ENV_HOST_URL": "\"http://127.0.0.1:9000\""
               },
               "__plugin__": "DefinePlugin",
               "__lable__": "define"
-            },
-            {
-              "chunkNames": [
-                "common"
-              ],
-              "selectedChunks": [
-                "ant/tab/tab",
-                "css/module/module",
-                "hello/component",
-                "hello/element",
-                "home/home",
-                "spa/client",
-                "spa/redux",
-                "spa/ssr",
-                "layout"
-              ],
-              "ident": "D:\\git\\tomato-site\\node_modules\\_webpack@3.10.0@webpack\\lib\\optimize\\CommonsChunkPlugin.js1",
-              "__plugin__": "CommonsChunkPlugin",
-              "__lable__": "commonsChunk"
-            },
-            {
-              "options": {},
-              "fullBuildTimeout": 200,
-              "requestTimeout": 10000,
-              "__plugin__": "HotModuleReplacementPlugin",
-              "__lable__": "hot"
             },
             {
               "opts": {
@@ -560,7 +432,10 @@
                 "host": "http://127.0.0.1:9000",
                 "proxy": true,
                 "buildPath": "D:\\git\\tomato-site\\public",
+                "publicPath": "/public/",
+                "localPublicPath": "/public/",
                 "assets": false,
+                "dllDir": "C:\\Users\\kobepeng\\AppData\\Local\\Temp\\easywebpack\\tomato-site\\dev\\dll",
                 "filepath": "D:\\git\\tomato-site\\config\\manifest.json",
                 "dllConfig": [
                   {
@@ -571,7 +446,21 @@
                     ]
                   }
                 ],
-                "dllDir": "C:\\Users\\kobepeng\\AppData\\Local\\Temp/easywebpack/tomato-site/"
+                "dllChunk": {
+                  "names": [
+                    "vendor"
+                  ],
+                  "chunks": [],
+                  "dll": [
+                    {
+                      "name": "vendor",
+                      "lib": [
+                        "react",
+                        "react-dom"
+                      ]
+                    }
+                  ]
+                }
               },
               "__plugin__": "webpack-manifest-resource-plugin",
               "__lable__": "manifest"
@@ -581,13 +470,11 @@
               "__lable__": "progress"
             },
             {
-              "__plugin__": "directory-named-webpack-plugin",
-              "__lable__": "directoryname"
-            },
-            {
               "filename": "css/[name].css",
               "id": 2,
-              "options": {},
+              "options": {
+                "allChunks": true
+              },
               "__plugin__": "extract-text-webpack-plugin",
               "__lable__": "extract"
             }
@@ -596,21 +483,21 @@
         {
           "context": "D:\\git\\tomato-site",
           "entry": {
-            "ant/tab/tab": "babel-loader!D:\\git\\tomato-site\\app\\web\\framework\\entry\\server-loader.js!/git/tomato-site/app/web/page/ant/tab/tab.jsx",
-            "css/module/module": "babel-loader!D:\\git\\tomato-site\\app\\web\\framework\\entry\\server-loader.js!/git/tomato-site/app/web/page/css/module/module.jsx",
-            "hello/component": "babel-loader!D:\\git\\tomato-site\\app\\web\\framework\\entry\\server-loader.js!/git/tomato-site/app/web/page/hello/component.jsx",
-            "hello/element": "babel-loader!D:\\git\\tomato-site\\app\\web\\framework\\entry\\server-loader.js!/git/tomato-site/app/web/page/hello/element.jsx",
-            "home/home": "babel-loader!D:\\git\\tomato-site\\app\\web\\framework\\entry\\server-loader.js!/git/tomato-site/app/web/page/home/home.jsx",
+            "ant/tab/tab": "babel-loader!D:\\git\\tomato-site\\app\\web\\framework\\entry\\server-loader.js!D:\\git\\tomato-site\\app\\web\\page\\ant\\tab\\tab.jsx",
+            "css/module/module": "babel-loader!D:\\git\\tomato-site\\app\\web\\framework\\entry\\server-loader.js!D:\\git\\tomato-site\\app\\web\\page\\css\\module\\module.jsx",
+            "hello/component": "babel-loader!D:\\git\\tomato-site\\app\\web\\framework\\entry\\server-loader.js!D:\\git\\tomato-site\\app\\web\\page\\hello\\component.jsx",
+            "hello/element": "babel-loader!D:\\git\\tomato-site\\app\\web\\framework\\entry\\server-loader.js!D:\\git\\tomato-site\\app\\web\\page\\hello\\element.jsx",
+            "home/home": "babel-loader!D:\\git\\tomato-site\\app\\web\\framework\\entry\\server-loader.js!D:\\git\\tomato-site\\app\\web\\page\\home\\home.jsx",
             "spa/client": "D:\\git\\tomato-site\\app\\web\\page\\spa\\client.jsx",
             "spa/redux": "D:\\git\\tomato-site\\app\\web\\page\\spa\\redux.jsx",
             "spa/ssr": "D:\\git\\tomato-site\\app\\web\\page\\spa\\ssr.jsx",
             "layout": "D:\\git\\tomato-site\\app\\web\\framework\\layout\\layout.jsx"
           },
           "output": {
-            "libraryTarget": "commonjs2",
+            "libraryTarget": "commonjs",
             "filename": "[name].js",
             "path": "D:\\git\\tomato-site\\app\\view",
-            "publicPath": "http://127.0.0.1:9000/public/"
+            "publicPath": "/public/"
           },
           "resolve": {
             "extensions": [
@@ -630,14 +517,19 @@
           "resolveLoader": {
             "modules": [
               "D:\\git\\tomato-site\\node_modules",
-              "D:\\git\\tomato-site\\node_modules\\_easywebpack@3.5.13@easywebpack\\node_modules",
-              "D:\\git\\tomato-site\\node_modules\\_easywebpack-react@3.5.0@easywebpack-react\\node_modules"
+              "D:\\git\\tomato-site\\node_modules\\_easywebpack@4.2.4@easywebpack\\node_modules",
+              "D:\\git\\tomato-site\\node_modules\\_easywebpack-react@4.0.0@easywebpack-react\\node_modules"
             ]
           },
+          "mode": "development",
           "target": "node",
           "node": {
             "__filename": false,
             "__dirname": false
+          },
+          "cache": true,
+          "optimization": {
+            "minimize": false
           },
           "module": {
             "rules": [
@@ -646,7 +538,8 @@
                 "exclude": {},
                 "use": [
                   {
-                    "loader": "babel-loader"
+                    "loader": "babel-loader",
+                    "options": {}
                   }
                 ]
               },
@@ -654,7 +547,8 @@
                 "test": {},
                 "use": [
                   {
-                    "loader": "eslint-loader"
+                    "loader": "eslint-loader",
+                    "options": {}
                   }
                 ],
                 "exclude": {},
@@ -668,61 +562,11 @@
                   },
                   {
                     "loader": "css-loader",
-                    "options": {
-                      "minimize": false
-                    }
+                    "options": {}
                   },
                   {
-                    "loader": "postcss-loader"
-                  }
-                ],
-                "exclude": [
-                  "D:\\git\\tomato-site\\app\\web\\page\\css\\module"
-                ]
-              },
-              {
-                "test": {},
-                "use": [
-                  {
-                    "loader": "isomorphic-style-loader"
-                  },
-                  {
-                    "loader": "css-loader",
-                    "options": {
-                      "minimize": false
-                    }
-                  },
-                  {
-                    "loader": "postcss-loader"
-                  },
-                  {
-                    "loader": "sass-loader"
-                  }
-                ],
-                "exclude": [
-                  "D:\\git\\tomato-site\\app\\web\\page\\css\\module"
-                ]
-              },
-              {
-                "test": {},
-                "use": [
-                  {
-                    "loader": "isomorphic-style-loader"
-                  },
-                  {
-                    "loader": "css-loader",
-                    "options": {
-                      "minimize": false
-                    }
-                  },
-                  {
-                    "loader": "postcss-loader"
-                  },
-                  {
-                    "loader": "sass-loader",
-                    "options": {
-                      "indentedSyntax": true
-                    }
+                    "loader": "postcss-loader",
+                    "options": {}
                   }
                 ],
                 "exclude": [
@@ -748,6 +592,18 @@
                     "loader": "url-loader",
                     "options": {
                       "limit": 1024,
+                      "name": "media/[name].[ext]"
+                    }
+                  }
+                ]
+              },
+              {
+                "test": {},
+                "use": [
+                  {
+                    "loader": "url-loader",
+                    "options": {
+                      "limit": 1024,
                       "name": "font/[name].[ext]"
                     }
                   }
@@ -757,71 +613,19 @@
                 "test": {},
                 "use": [
                   {
-                    "loader": "isomorphic-style-loader"
+                    "loader": "isomorphic-style-loader",
+                    "options": {}
                   },
                   {
                     "loader": "css-loader",
                     "options": {
                       "modules": true,
-                      "importLoaders": 1,
-                      "minimize": false
+                      "importLoaders": 1
                     }
                   },
                   {
-                    "loader": "postcss-loader"
-                  }
-                ],
-                "include": [
-                  "D:\\git\\tomato-site\\app\\web\\page\\css\\module"
-                ]
-              },
-              {
-                "test": {},
-                "use": [
-                  {
-                    "loader": "isomorphic-style-loader"
-                  },
-                  {
-                    "loader": "css-loader",
-                    "options": {
-                      "modules": true,
-                      "importLoaders": 2,
-                      "minimize": false
-                    }
-                  },
-                  {
-                    "loader": "postcss-loader"
-                  },
-                  {
-                    "loader": "sass-loader"
-                  }
-                ],
-                "include": [
-                  "D:\\git\\tomato-site\\app\\web\\page\\css\\module"
-                ]
-              },
-              {
-                "test": {},
-                "use": [
-                  {
-                    "loader": "isomorphic-style-loader"
-                  },
-                  {
-                    "loader": "css-loader",
-                    "options": {
-                      "modules": true,
-                      "importLoaders": 2,
-                      "minimize": false
-                    }
-                  },
-                  {
-                    "loader": "postcss-loader"
-                  },
-                  {
-                    "loader": "sass-loader",
-                    "options": {
-                      "indentedSyntax": true
-                    }
+                    "loader": "postcss-loader",
+                    "options": {}
                   }
                 ],
                 "include": [
@@ -832,10 +636,6 @@
           },
           "plugins": [
             {
-              "__plugin__": "NoEmitOnErrorsPlugin",
-              "__lable__": "error"
-            },
-            {
               "definitions": {},
               "__plugin__": "ProvidePlugin",
               "__lable__": "provide"
@@ -843,12 +643,14 @@
             {
               "definitions": {
                 "process.env.NODE_ENV": "\"development\"",
+                "EASY_ENV": "\"dev\"",
                 "EASY_ENV_IS_DEV": true,
                 "EASY_ENV_IS_TEST": false,
                 "EASY_ENV_IS_PROD": false,
                 "EASY_ENV_IS_BROWSER": false,
                 "EASY_ENV_IS_NODE": true,
-                "EASY_ENV_PUBLIC_PATH": "\"http://127.0.0.1:9000/public/\"",
+                "EASY_ENV_LOCAL_PUBLIC_PATH": "\"/public/\"",
+                "EASY_ENV_PUBLIC_PATH": "\"/public/\"",
                 "EASY_ENV_HOST_URL": "\"http://127.0.0.1:9000\""
               },
               "__plugin__": "DefinePlugin",
@@ -857,10 +659,6 @@
             {
               "__plugin__": "progress-bar-webpack-plugin",
               "__lable__": "progress"
-            },
-            {
-              "__plugin__": "directory-named-webpack-plugin",
-              "__lable__": "directoryname"
             }
           ]
         }
@@ -873,23 +671,25 @@
     "proxy": false,
     "protocolHeaders": "x-forwarded-proto",
     "ipHeaders": "x-forwarded-for",
-    "hostHeaders": "x-forwarded-host",
+    "hostHeaders": "",
     "pkg": {
       "name": "tomato-site",
-      "version": "0.0.1",
-      "description": "tomatobang 官网与后台",
+      "version": "1.0.0",
+      "description": "site for tomatobang",
       "scripts": {
         "build": "cross-env easywebpack build prod",
         "build:test": "cross-env easywebpack build test",
         "build:prod": "cross-env easywebpack build prod",
-        "start": "node index.js",
-        "start:test": "cross-env EGG_SERVER_ENV=test node index.js",
-        "start:prod": "cross-env EGG_SERVER_ENV=prod node index.js",
+        "debug": "egg-bin debug",
+        "dev": "cross-env WORKERS=1 node index.js",
+        "start": "cross-env EGG_SERVER_ENV=prod NODE_ENV=production node index.js",
         "kill-port": "kill -9 $(lsof -i:8888 |grep 'node'|aw '{print $2}') ",
         "lint": "eslint .",
-        "fix": "eslint --fix ."
+        "fix": "eslint --fix .",
+        "ii": "npm install --registry https://registry.npm.taobao.org"
       },
       "dependencies": {
+        "cross-env": "^5.0.0",
         "egg": "^2.1.0",
         "egg-cors": "^2.0.0",
         "egg-logger": "^1.5.0",
@@ -903,7 +703,11 @@
         "react": "^16.0.0",
         "react-dom": "^16.0.0",
         "react-router": "^4.2.0",
-        "react-router-config": "^1.0.0-beta.4"
+        "react-router-config": "^1.0.0-beta.4",
+        "react-redux": "^5.0.6",
+        "react-router-dom": "^4.2.2",
+        "react-router-redux": "^4.0.8",
+        "redux": "^3.7.2"
       },
       "devDependencies": {
         "antd": "^3.0.3",
@@ -918,50 +722,36 @@
         "babel-plugin-transform-object-rest-spread": "^6.26.0",
         "babel-preset-env": "^1.6.0",
         "babel-preset-react": "^6.24.1",
-        "cross-env": "^5.0.0",
-        "directory-named-webpack-plugin": "^2.2.3",
-        "easywebpack-cli": "^3.5.0",
-        "easywebpack-react": "^3.5.0",
-        "egg-webpack": "^3.2.4",
-        "egg-webpack-react": "^2.0.0",
-        "eslint": "^4.6.1",
+        "easywebpack-cli": "^3.8.0",
+        "easywebpack-react": "^4.0.0",
+        "egg-bin": "^4.5.0",
+        "egg-webpack": "^4.0.1",
+        "egg-webpack-react": "^2.0.2",
         "eslint-config-egg": "^5.1.1",
-        "eslint-loader": "^1.9.0",
         "eslint-plugin-react": "^7.1.0",
-        "history": "^4.7.2",
-        "html-webpack-plugin": "^2.30.1",
         "imagemin-webpack-plugin": "^1.5.2",
         "ip": "^1.1.5",
         "less": "^2.7.2",
         "less-loader": "^4.0.5",
         "node-sass": "^4.6.0",
         "postcss-loader": "^2.0.8",
-        "progress-bar-webpack-plugin": "^1.10.0",
-        "react-redux": "^5.0.6",
-        "react-router": "^4.2.0",
-        "react-router-dom": "^4.2.2",
-        "react-router-redux": "^4.0.8",
-        "redux": "^3.7.2",
         "sass-loader": "^6.0.6",
         "stylus": "^0.54.5",
-        "stylus-loader": "^3.0.1",
-        "uglifyjs-webpack-plugin": "^1.1.2",
-        "vconsole": "^3.0.0",
-        "webpack-manifest-resource-plugin": "^2.0.2"
+        "stylus-loader": "^3.0.1"
       },
       "engines": {
-        "node": ">=8.0.0"
+        "node": ">=6.0.0"
       },
       "ci": {
-        "version": "8,9"
+        "version": "6, 8, 9"
       },
       "repository": {
         "type": "git",
-        "url": "git+https://github.com/tomatobang/tomato-site.git"
+        "url": "git+https://github.com/pengkobe/tomato-site.git"
       },
-      "author": "hubcarl@126.com",
+      "author": "pengkobe",
       "license": "MIT",
-      "homepage": "https://github.com/tomatobang/tomato-site"
+      "homepage": "https://github.com/pengkobe/tomato-site"
     },
     "baseDir": "D:\\git\\tomato-site",
     "HOME": "C:\\Users\\kobepeng",
@@ -1080,9 +870,9 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "D:\\git\\tomato-site\\node_modules\\_egg@2.2.0@egg\\config\\plugin.js",
-      "path": "D:\\git\\tomato-site\\node_modules\\_egg-session@3.0.0@egg-session",
-      "version": "3.0.0"
+      "from": "D:\\git\\tomato-site\\node_modules\\_egg@2.5.0@egg\\config\\plugin.js",
+      "path": "D:\\git\\tomato-site\\node_modules\\_egg-session@3.1.0@egg-session",
+      "version": "3.1.0"
     },
     "security": {
       "enable": true,
@@ -1093,9 +883,9 @@
         "session"
       ],
       "env": [],
-      "from": "D:\\git\\tomato-site\\node_modules\\_egg@2.2.0@egg\\config\\plugin.js",
-      "path": "D:\\git\\tomato-site\\node_modules\\_egg-security@2.0.0@egg-security",
-      "version": "2.0.0"
+      "from": "D:\\git\\tomato-site\\node_modules\\_egg@2.5.0@egg\\config\\plugin.js",
+      "path": "D:\\git\\tomato-site\\node_modules\\_egg-security@2.2.1@egg-security",
+      "version": "2.2.1"
     },
     "jsonp": {
       "enable": true,
@@ -1106,7 +896,7 @@
         "security"
       ],
       "env": [],
-      "from": "D:\\git\\tomato-site\\node_modules\\_egg@2.2.0@egg\\config\\plugin.js",
+      "from": "D:\\git\\tomato-site\\node_modules\\_egg@2.5.0@egg\\config\\plugin.js",
       "path": "D:\\git\\tomato-site\\node_modules\\_egg-jsonp@2.0.0@egg-jsonp",
       "version": "2.0.0"
     },
@@ -1119,7 +909,7 @@
         "jsonp"
       ],
       "env": [],
-      "from": "D:\\git\\tomato-site\\node_modules\\_egg@2.2.0@egg\\config\\plugin.js",
+      "from": "D:\\git\\tomato-site\\node_modules\\_egg@2.5.0@egg\\config\\plugin.js",
       "path": "D:\\git\\tomato-site\\node_modules\\_egg-onerror@2.0.0@egg-onerror",
       "version": "2.0.0"
     },
@@ -1130,7 +920,7 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "D:\\git\\tomato-site\\node_modules\\_egg@2.2.0@egg\\config\\plugin.js",
+      "from": "D:\\git\\tomato-site\\node_modules\\_egg@2.5.0@egg\\config\\plugin.js",
       "path": "D:\\git\\tomato-site\\node_modules\\_egg-i18n@2.0.0@egg-i18n",
       "version": "2.0.0"
     },
@@ -1141,7 +931,7 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "D:\\git\\tomato-site\\node_modules\\_egg@2.2.0@egg\\config\\plugin.js",
+      "from": "D:\\git\\tomato-site\\node_modules\\_egg@2.5.0@egg\\config\\plugin.js",
       "path": "D:\\git\\tomato-site\\node_modules\\_egg-watcher@3.0.0@egg-watcher",
       "version": "3.0.0"
     },
@@ -1152,7 +942,7 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "D:\\git\\tomato-site\\node_modules\\_egg@2.2.0@egg\\config\\plugin.js",
+      "from": "D:\\git\\tomato-site\\node_modules\\_egg@2.5.0@egg\\config\\plugin.js",
       "path": "D:\\git\\tomato-site\\node_modules\\_egg-multipart@2.0.0@egg-multipart",
       "version": "2.0.0"
     },
@@ -1167,9 +957,9 @@
       "env": [
         "local"
       ],
-      "from": "D:\\git\\tomato-site\\node_modules\\_egg@2.2.0@egg\\config\\plugin.js",
-      "path": "D:\\git\\tomato-site\\node_modules\\_egg-development@2.1.0@egg-development",
-      "version": "2.1.0"
+      "from": "D:\\git\\tomato-site\\node_modules\\_egg@2.5.0@egg\\config\\plugin.js",
+      "path": "D:\\git\\tomato-site\\node_modules\\_egg-development@2.2.0@egg-development",
+      "version": "2.2.0"
     },
     "schedule": {
       "enable": true,
@@ -1178,9 +968,9 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "D:\\git\\tomato-site\\node_modules\\_egg@2.2.0@egg\\config\\plugin.js",
-      "path": "D:\\git\\tomato-site\\node_modules\\_egg-schedule@3.1.1@egg-schedule",
-      "version": "3.1.1"
+      "from": "D:\\git\\tomato-site\\node_modules\\_egg@2.5.0@egg\\config\\plugin.js",
+      "path": "D:\\git\\tomato-site\\node_modules\\_egg-schedule@3.3.0@egg-schedule",
+      "version": "3.3.0"
     },
     "logrotator": {
       "enable": true,
@@ -1191,9 +981,9 @@
       ],
       "optionalDependencies": [],
       "env": [],
-      "from": "D:\\git\\tomato-site\\node_modules\\_egg@2.2.0@egg\\config\\plugin.js",
-      "path": "D:\\git\\tomato-site\\node_modules\\_egg-logrotator@3.0.1@egg-logrotator",
-      "version": "3.0.1"
+      "from": "D:\\git\\tomato-site\\node_modules\\_egg@2.5.0@egg\\config\\plugin.js",
+      "path": "D:\\git\\tomato-site\\node_modules\\_egg-logrotator@3.0.3@egg-logrotator",
+      "version": "3.0.3"
     },
     "static": {
       "enable": true,
@@ -1203,8 +993,8 @@
       "optionalDependencies": [],
       "env": [],
       "from": "D:\\git\\tomato-site\\config\\plugin.js",
-      "path": "D:\\git\\tomato-site\\node_modules\\_egg-static@2.0.0@egg-static",
-      "version": "2.0.0"
+      "path": "D:\\git\\tomato-site\\node_modules\\_egg-static@2.1.0@egg-static",
+      "version": "2.1.0"
     },
     "view": {
       "enable": true,
@@ -1213,9 +1003,9 @@
       "dependencies": [],
       "optionalDependencies": [],
       "env": [],
-      "from": "D:\\git\\tomato-site\\node_modules\\_egg@2.2.0@egg\\config\\plugin.js",
-      "path": "D:\\git\\tomato-site\\node_modules\\_egg-view@2.0.0@egg-view",
-      "version": "2.0.0"
+      "from": "D:\\git\\tomato-site\\node_modules\\_egg@2.5.0@egg\\config\\plugin.js",
+      "path": "D:\\git\\tomato-site\\node_modules\\_egg-view@2.1.0@egg-view",
+      "version": "2.1.0"
     },
     "reactssr": {
       "enable": true,
@@ -1225,8 +1015,8 @@
       "optionalDependencies": [],
       "env": [],
       "from": "D:\\git\\tomato-site\\config\\plugin.js",
-      "path": "D:\\git\\tomato-site\\node_modules\\_egg-view-react-ssr@2.2.2@egg-view-react-ssr",
-      "version": "2.2.2"
+      "path": "D:\\git\\tomato-site\\node_modules\\_egg-view-react-ssr@2.2.4@egg-view-react-ssr",
+      "version": "2.2.4"
     },
     "cors": {
       "enable": true,
@@ -1249,8 +1039,8 @@
         "local"
       ],
       "from": "D:\\git\\tomato-site\\config\\plugin.local.js",
-      "path": "D:\\git\\tomato-site\\node_modules\\_egg-webpack@3.2.8@egg-webpack",
-      "version": "3.2.8"
+      "path": "D:\\git\\tomato-site\\node_modules\\_egg-webpack@4.1.0@egg-webpack",
+      "version": "4.1.0"
     },
     "webpackreact": {
       "enable": true,
@@ -1262,8 +1052,8 @@
         "local"
       ],
       "from": "D:\\git\\tomato-site\\config\\plugin.local.js",
-      "path": "D:\\git\\tomato-site\\node_modules\\_egg-webpack-react@2.0.1@egg-webpack-react",
-      "version": "2.0.1"
+      "path": "D:\\git\\tomato-site\\node_modules\\_egg-webpack-react@2.0.2@egg-webpack-react",
+      "version": "2.0.2"
     }
   }
 }
