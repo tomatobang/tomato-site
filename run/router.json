@@ -19,45 +19,6 @@
       "GET"
     ],
     "paramNames": [],
-    "path": "/client",
-    "regexp": "/^\\/client(?:\\/(?=$))?$/",
-    "stack": [
-      "wrappedController"
-    ]
-  },
-  {
-    "name": null,
-    "methods": [
-      "HEAD",
-      "GET"
-    ],
-    "paramNames": [],
-    "path": "/pager",
-    "regexp": "/^\\/pager(?:\\/(?=$))?$/",
-    "stack": [
-      "wrappedController"
-    ]
-  },
-  {
-    "name": null,
-    "methods": [
-      "HEAD",
-      "GET"
-    ],
-    "paramNames": [],
-    "path": "/about",
-    "regexp": "/^\\/about(?:\\/(?=$))?$/",
-    "stack": [
-      "wrappedController"
-    ]
-  },
-  {
-    "name": null,
-    "methods": [
-      "HEAD",
-      "GET"
-    ],
-    "paramNames": [],
     "path": "/app/api/article/list",
     "regexp": "/^\\/app\\/api\\/article\\/list(?:\\/(?=$))?$/",
     "stack": [
@@ -180,19 +141,6 @@
     ],
     "path": "/spa(/.+)?",
     "regexp": "/^\\/spa(?:((?:\\/.+)))?(?:\\/(?=$))?$/",
-    "stack": [
-      "wrappedController"
-    ]
-  },
-  {
-    "name": null,
-    "methods": [
-      "HEAD",
-      "GET"
-    ],
-    "paramNames": [],
-    "path": "/test",
-    "regexp": "/^\\/test(?:\\/(?=$))?$/",
     "stack": [
       "wrappedController"
     ]

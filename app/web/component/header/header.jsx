@@ -10,8 +10,6 @@ export default class Header extends Component {
       <div className="container"><h1>
         <a href="/" className="router-link-active">TomatoBang</a></h1>
       <ul className="nav">
-        <li className="nav-item"><a href="/">Server-Render</a></li>
-        <li className="nav-item"><a href="/client">Client-Render</a></li>
         <li className="nav-item"><a href="/spa/redux">SPA-CSR</a></li>
         <li className="nav-item"><a href="/spa/ssr">SPA-SSR</a></li>
       </ul>

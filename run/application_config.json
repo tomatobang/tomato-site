@@ -216,18 +216,6 @@
         {
           "context": "D:\\git\\tomato-site",
           "entry": {
-            "ant/tab/tab": [
-              "react-hot-loader/patch",
-              "D:\\git\\tomato-site\\node_modules\\_webpack-hot-middleware@2.21.2@webpack-hot-middleware/client?path=http://127.0.0.1:9000/__webpack_hmr&noInfo=false&reload=false&quiet=false",
-              "D:\\git\\tomato-site\\node_modules\\_easywebpack@4.2.4@easywebpack\\utils\\hot.js",
-              "babel-loader!D:\\git\\tomato-site\\app\\web\\framework\\entry\\client-loader.js!D:\\git\\tomato-site\\app\\web\\page\\ant\\tab\\tab.jsx"
-            ],
-            "home/home": [
-              "react-hot-loader/patch",
-              "D:\\git\\tomato-site\\node_modules\\_webpack-hot-middleware@2.21.2@webpack-hot-middleware/client?path=http://127.0.0.1:9000/__webpack_hmr&noInfo=false&reload=false&quiet=false",
-              "D:\\git\\tomato-site\\node_modules\\_easywebpack@4.2.4@easywebpack\\utils\\hot.js",
-              "babel-loader!D:\\git\\tomato-site\\app\\web\\framework\\entry\\client-loader.js!D:\\git\\tomato-site\\app\\web\\page\\home\\home.jsx"
-            ],
             "spa/client": [
               "react-hot-loader/patch",
               "D:\\git\\tomato-site\\node_modules\\_webpack-hot-middleware@2.21.2@webpack-hot-middleware/client?path=http://127.0.0.1:9000/__webpack_hmr&noInfo=false&reload=false&quiet=false",
@@ -663,8 +651,6 @@
         {
           "context": "D:\\git\\tomato-site",
           "entry": {
-            "ant/tab/tab": "babel-loader!D:\\git\\tomato-site\\app\\web\\framework\\entry\\server-loader.js!D:\\git\\tomato-site\\app\\web\\page\\ant\\tab\\tab.jsx",
-            "home/home": "babel-loader!D:\\git\\tomato-site\\app\\web\\framework\\entry\\server-loader.js!D:\\git\\tomato-site\\app\\web\\page\\home\\home.jsx",
             "spa/client": "D:\\git\\tomato-site\\app\\web\\page\\spa\\client.jsx",
             "spa/redux": "D:\\git\\tomato-site\\app\\web\\page\\spa\\redux.jsx",
             "spa/ssr": "D:\\git\\tomato-site\\app\\web\\page\\spa\\ssr.jsx",

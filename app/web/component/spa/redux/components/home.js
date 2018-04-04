@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { add, del } from 'component/spa/redux/actions';
+import { Carousel } from 'antd';
 
 class Home extends Component {
   render() {
@@ -15,6 +16,12 @@ class Home extends Component {
     };
     return <div className="redux-nav-item">
       <h3>TomatoBang</h3>
+      <Carousel vertical="true">
+        <div><h3>1</h3></div>
+        <div><h3>2</h3></div>
+        <div><h3>3</h3></div>
+        <div><h3>4</h3></div>
+      </Carousel>
       <div className="container">
         <div className="row row-offcanvas row-offcanvas-right">
           <div className="col-xs-12 col-sm-9">
