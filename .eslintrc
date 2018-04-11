@@ -34,8 +34,8 @@
       "expression"
     ],
     "comma-dangle": [
-      "error",
-      "never"
+      "warn",
+      "always"
     ]
   },
   "plugins": [
