@@ -7,7 +7,7 @@ dist
 static
 public/
 private
-run
+run/
 *.iml
 artifacts.json
 tmp/
