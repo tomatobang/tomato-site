@@ -6,8 +6,11 @@ export default class Header extends Component {
   }
   render() {
     return <header className="header">
-      <div className="container"><h1>
-        <a href="/" className="router-link-active">TomatoBang</a></h1>
+      <div className="container">
+        <h1>
+          <img src="/asset/images/logo.png"/>
+          <a href="/" className="router-link-active">TomatoBang</a>
+        </h1>
       </div>
     </header>;
   }
