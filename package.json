@@ -27,6 +27,7 @@
     "mockjs": "^1.0.1-beta3",
     "moment": "^2.17.1",
     "rc-queue-anim": "^1.4.1",
+    "rc-scroll-anim": "^2.4.1",
     "rc-tween-one": "^1.7.3",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",

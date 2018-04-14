@@ -1,8 +1,10 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import {add, del} from 'component/spa/redux/actions';
-import {Carousel} from 'antd';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { add, del } from 'component/spa/redux/actions';
+import { Carousel } from 'antd';
 import Banner from './Banner';
+import Feature from './feature';
+import './home.css';
 
 import QueueAnim from 'rc-queue-anim';
 import TweenOne from 'rc-tween-one';
@@ -10,31 +12,37 @@ const TweenOneGroup = TweenOne.TweenOneGroup;
 
 class Home extends Component {
   render() {
-    const {add, del, list} = this.props;
+    const { add, del, list } = this.props;
     const id = list.length + 1;
+
     const item = {
       id,
-      title: `Egg+React 服务端渲染骨架-${id}`,
-      summary: '基于Egg + React + Webpack3/Webpack2 服务端渲染骨架项目',
+      title: `好玩-${id}`,
+      summary: '管理你 <b>工作&生活</b> 的最佳工具.',
       hits: 550 + id,
-      url: 'https://github.com/hubcarl/egg-react-webpack-boilerplate'
+      url: 'https://www.tomatobang.com',
     };
+
     return (
       <div className="redux-nav-item">
         <Banner isMobile="false" />
+        <Feature />
         <div className="container">
           <Carousel horizontal="true" className="tomatobang-carousel">
             <div>
-              <h3>1</h3>
+              <img alt="banner" src={require('asset/images/banner/tab1.png')} />
             </div>
             <div>
-              <h3>2</h3>
+              <img alt="banner" src={require('asset/images/banner/tab2.png')} />
             </div>
             <div>
-              <h3>3</h3>
+              <img
+                alt="banner"
+                src={require('asset/images/banner/tab3-1.png')}
+              />
             </div>
             <div>
-              <h3>4</h3>
+              <img alt="banner" src={require('asset/images/banner/tab4.png')} />
             </div>
           </Carousel>
           <TweenOneGroup>
@@ -43,44 +51,46 @@ class Home extends Component {
           <div className="row row-offcanvas row-offcanvas-right">
             <div className="col-xs-12 col-sm-9">
               <ul className="smart-artiles" id="articleList">
-                {list
-                  .map(function (item) {
-                    return (
-                      <li key={item.id}>
-                        <div className="point">+{item.hits}</div>
-                        <div className="card">
-                          <h2>
-                            <a href={item.url} target="_blank">
-                              {item.title}
-                            </a>
-                          </h2>
-                          <div>
-                            <ul className="actions">
-                              <li>
-                                <time className="timeago">{item.moduleName}</time>
-                              </li>
-                              <li className="tauthor">
-                                <a href="#" target="_blank" className="get">
-                                  Sky
-                                </a>
-                              </li>
-                              <li>
-                                <a>+收藏</a>
-                              </li>
-                              <li>
-                                <span className="timeago">{item.summary}</span>
-                              </li>
-                              <li>
-                                <span className="redux-btn-del" onClick={() => del(item.id)}>
-                                  Delete
-                                </span>
-                              </li>
-                            </ul>
-                          </div>
+                {list.map(function(item) {
+                  return (
+                    <li key={item.id}>
+                      <div className="point">+{item.hits}</div>
+                      <div className="card">
+                        <h2>
+                          <a href={item.url} target="_blank">
+                            {item.title}
+                          </a>
+                        </h2>
+                        <div>
+                          <ul className="actions">
+                            <li>
+                              <time className="timeago">{item.moduleName}</time>
+                            </li>
+                            <li className="tauthor">
+                              <a href="#" target="_blank" className="get">
+                                Sky
+                              </a>
+                            </li>
+                            <li>
+                              <a>+收藏</a>
+                            </li>
+                            <li>
+                              <span className="timeago">{item.summary}</span>
+                            </li>
+                            <li>
+                              <span
+                                className="redux-btn-del"
+                                onClick={() => del(item.id)}
+                              >
+                                Delete
+                              </span>
+                            </li>
+                          </ul>
                         </div>
-                      </li>
-                    );
-                  })}
+                      </div>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </div>
@@ -89,7 +99,7 @@ class Home extends Component {
           <div key="123" className="redux-btn-add" onClick={() => add(item)}>
             Add
           </div>
-          <div key="234" >this is nosense message</div>
+          <div key="234">this is nosense message</div>
         </QueueAnim>
       </div>
     );
@@ -98,7 +108,7 @@ class Home extends Component {
 
 const mapStateToProps = state => {
   console.log('mapStateToProps', state);
-  return {list: state.list};
+  return { list: state.list };
 };
 
-export default connect(mapStateToProps, {add, del})(Home);
+export default connect(mapStateToProps, { add, del })(Home);

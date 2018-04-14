@@ -1,22 +1,22 @@
 'use strict';
 const data = {
   list: [{
-    title: `Egg + React 服务端渲染骨架`,
-    summary: '基于Egg + React + Webpack3/Webpack2 多页面和单页面服务器渲染同构工程骨架项目',
+    title: `好玩.`,
+    summary: '管理你 <b>工作&生活</b> 的最佳工具.',
     hits: 550,
-    url: 'https://github.com/hubcarl/egg-react-webpack-boilerplate'
+    url: 'https://www.tomatobang.com'
   }, {
     id: 1,
-    title: '前端工程化解决方案easywebpack',
-    summary: 'programming instead of configuration, webpack is so easy',
+    title: '语音记录',
+    summary: '让你迷上自己的声音.',
     hits: 550,
-    url: 'https://github.com/hubcarl/easywebpack'
+    url: 'https://www.tomatobang.com'
   }, {
     id: 2,
-    title: '前端工程化解决方案脚手架easywebpack-cli',
-    summary: 'easywebpack command tool, support init Vue/Reac/Weex boilerplate',
+    title: '支持多端同步',
+    summary: 'PC端与 App 端神奇同步.',
     hits: 278,
-    url: 'https://github.com/hubcarl/easywebpack-cli'
+    url: 'https://www.tomatobang.com'
   }]
 };
 

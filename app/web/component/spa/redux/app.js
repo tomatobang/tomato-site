@@ -29,9 +29,6 @@ class App extends Component {
     return <BrowserRouter>
       <div>
         <Menu onClick={this.handleClick.bind(this)} selectedKeys={[this.state.current]} mode="horizontal">
-          <Menu.Item key="ssr">
-            <a href="/spa/ssr">spa/ssr</a>
-          </Menu.Item>
           <Menu.Item key="home">
             <Link to="/spa/redux">spa/redux</Link>
           </Menu.Item>
