@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
 import Home from 'component/spa/ssr/components/home';
 import About from 'component/spa/ssr/components/about';
+import Header from 'component/header/header';
+
 
 import { Menu, Icon } from 'antd';
 
@@ -23,12 +25,13 @@ class App extends Component {
 
   render() {
     return <div>
+      <Header></Header>
       <Menu onClick={this.handleClick.bind(this)} selectedKeys={[this.state.current]} mode="horizontal">
         <Menu.Item key="home">
-          <Link to="/spa/ssr">SPA-Redux-Server-Side-Render</Link>
+          <Link to="/spa/ssr">详情</Link>
         </Menu.Item>
         <Menu.Item key="about">
-          <Link to="/spa/ssr/about">About</Link>
+          <Link to="/spa/ssr/about">关于</Link>
         </Menu.Item>
       </Menu>
       <Switch>

@@ -2,7 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { AppContainer } from 'react-hot-loader';
-import Header from 'component/header/header.jsx';
 import App from 'component/spa/redux/app';
 import store from 'component/spa/redux/store';
 import './spa.css';
@@ -14,7 +13,6 @@ const RApp = () => {
 };
 ReactDOM.render(
   <div>
-    <Header></Header>
     <Provider store={store}>
       <App />
     </Provider>

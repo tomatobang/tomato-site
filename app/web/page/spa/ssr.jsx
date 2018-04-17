@@ -6,7 +6,6 @@ import { BrowserRouter, StaticRouter } from 'react-router-dom';
 import { matchRoutes, renderRoutes } from 'react-router-config';
 import { AppContainer } from 'react-hot-loader';
 import Layout from 'framework/layout/layout.jsx';
-import Header from 'component/header/header';
 import SSR from 'component/spa/ssr/ssr';
 import { create } from 'component/spa/ssr/store';
 import routes from 'component/spa/ssr/routes'
@@ -15,7 +14,6 @@ const clientRender = () => {
   const store = create(window.__INITIAL_STATE__);
   const url = store.getState().url;
   const Entry = () => (<div>
-    <Header></Header>
     <Provider store={ store }>
       <BrowserRouter>
         <SSR url={ url }/>
@@ -49,7 +47,6 @@ const serverRender = (context, options)=> {
     return () =>(
       <Layout>
         <div>
-          <Header></Header>
           <Provider store={store}>
             <StaticRouter location={url} context={{}}>
               <SSR url={url}/>

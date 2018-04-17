@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
+import Header from 'component/header/header.jsx';
 import Home from 'component/spa/redux/components/home';
 import About from 'component/spa/redux/components/about';
 
@@ -26,22 +27,25 @@ class App extends Component {
   }
 
   render() {
-    return <BrowserRouter>
-      <div>
-        <Menu onClick={this.handleClick.bind(this)} selectedKeys={[this.state.current]} mode="horizontal">
-          <Menu.Item key="home">
-            <Link to="/spa/redux">spa/redux</Link>
-          </Menu.Item>
-          <Menu.Item key="about">
-            <Link to="/spa/redux/about">About</Link>
-          </Menu.Item>
-        </Menu>
-        <Switch>
-          <Route path="/spa/redux/about" component={About}/>
-          <Route path="/spa/redux" component={Home}/>
-        </Switch>
-      </div>
-    </BrowserRouter>;
+    return <div>
+      <Header></Header>
+      <BrowserRouter>
+        <div>
+          <Menu onClick={this.handleClick.bind(this)} selectedKeys={[this.state.current]} mode="horizontal">
+            <Menu.Item key="home">
+              <Link to="/spa/redux">详情</Link>
+            </Menu.Item>
+            <Menu.Item key="about">
+              <Link to="/spa/redux/about">关于</Link>
+            </Menu.Item>
+          </Menu>
+          <Switch>
+            <Route path="/spa/redux/about" component={About}/>
+            <Route path="/spa/redux" component={Home}/>
+          </Switch>
+        </div>
+      </BrowserRouter>
+    </div>;
   }
 }
 
