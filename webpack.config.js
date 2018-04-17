@@ -5,7 +5,6 @@ module.exports = {
   entry: {
     include: ['app/web/page',
       { layout: 'app/web/framework/layout/layout.jsx?loader=false' },
-      { 'spa/redux': 'app/web/page/spa/redux.jsx?loader=false' },
       { 'spa/ssr': 'app/web/page/spa/ssr.jsx?loader=false' }
     ],
     exclude: ['app/web/page/test'],

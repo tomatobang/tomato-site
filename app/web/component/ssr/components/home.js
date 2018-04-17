@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { add, del } from 'component/spa/redux/actions';
+import { add, del } from 'component/ssr/actions';
 import { Carousel } from 'antd';
 import Banner from './Banner';
 import Feature from './feature';
@@ -11,10 +11,39 @@ import TweenOne from 'rc-tween-one';
 const TweenOneGroup = TweenOne.TweenOneGroup;
 
 class Home extends Component {
+  static fetch() {
+    return Promise.resolve({
+      list: [
+        {
+          id: 0,
+          title: '好玩.',
+          summary: '管理你 <b>工作&生活</b> 的最佳工具.',
+          hits: 550,
+          url: 'https://www.tomatobang.com',
+        },
+        {
+          id: 1,
+          title: '语音记录',
+          summary: '让你迷上自己的声音.',
+          hits: 550,
+          url: 'https://www.tomatobang.com',
+        },
+        {
+          id: 2,
+          title: '支持多端同步',
+          summary: 'PC端与 App 端神奇同步.',
+          hits: 278,
+          url: 'https://www.tomatobang.com',
+        },
+      ],
+    }).then(data => {
+      return data;
+    });
+  }
+
   render() {
     const { add, del, list } = this.props;
     const id = list.length + 1;
-
     const item = {
       id,
       title: `好玩-${id}`,
@@ -22,7 +51,6 @@ class Home extends Component {
       hits: 550 + id,
       url: 'https://www.tomatobang.com',
     };
-
     return (
       <div className="redux-nav-item">
         <Banner isMobile="false" />
@@ -108,7 +136,9 @@ class Home extends Component {
 
 const mapStateToProps = state => {
   console.log('mapStateToProps', state);
-  return { list: state.list };
+  return {
+    list: state.list,
+  };
 };
 
 export default connect(mapStateToProps, { add, del })(Home);

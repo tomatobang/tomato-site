@@ -1,5 +1,5 @@
-import Home from 'component/spa/ssr/components/home';
-import About from 'component/spa/ssr/components/about';
+import Home from 'component/ssr/components/home';
+import About from 'component/ssr/components/about';
 const NotFound = () => {
   return (
     <Route render={({ staticContext }) => {
@@ -16,7 +16,7 @@ const NotFound = () => {
 };
 const routes = [
   {
-    path: '/spa/ssr',
+    path: '/spa/ssr/',
     component: Home
   },
   {

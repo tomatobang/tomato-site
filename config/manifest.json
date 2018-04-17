@@ -1,26 +1,15 @@
 {
   "layout.js": "/public/js/layout.js",
-  "spa/redux.js": "/public/js/spa/redux.js",
-  "spa/redux.css": "/public/css/spa/redux.css",
   "spa/ssr.js": "/public/js/spa/ssr.js",
   "spa/ssr.css": "/public/css/spa/ssr.css",
-  "img/logo.png": "/public/img/logo.png",
   "js/vendor.js": "/public/js/vendor.js",
+  "img/tab1.png": "/public/img/tab1.png",
   "img/tab2.png": "/public/img/tab2.png",
   "img/tab3-1.png": "/public/img/tab3-1.png",
   "img/tab4.png": "/public/img/tab4.png",
-  "img/tab1.png": "/public/img/tab1.png",
+  "img/logo.png": "/public/img/logo.png",
   "vendor.js": "/public/js/vendor.js",
   "deps": {
-    "spa/redux.js": {
-      "js": [
-        "/public/js/vendor.js",
-        "/public/js/spa/redux.js"
-      ],
-      "css": [
-        "/public/css/spa/redux.css"
-      ]
-    },
     "spa/ssr.js": {
       "js": [
         "/public/js/vendor.js",

@@ -6,9 +6,9 @@ import { BrowserRouter, StaticRouter } from 'react-router-dom';
 import { matchRoutes, renderRoutes } from 'react-router-config';
 import { AppContainer } from 'react-hot-loader';
 import Layout from 'framework/layout/layout.jsx';
-import SSR from 'component/spa/ssr/ssr';
-import { create } from 'component/spa/ssr/store';
-import routes from 'component/spa/ssr/routes'
+import SSR from 'component/ssr/ssr';
+import { create } from 'component/ssr/store';
+import routes from 'component/ssr/routes'
 import './spa.css';
 const clientRender = () => {
   const store = create(window.__INITIAL_STATE__);

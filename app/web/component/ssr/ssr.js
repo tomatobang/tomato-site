@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
-import Home from 'component/spa/ssr/components/home';
-import About from 'component/spa/ssr/components/about';
+import Home from 'component/ssr/components/home';
+import About from 'component/ssr/components/about';
 import Header from 'component/header/header';
 
 
@@ -28,7 +28,7 @@ class App extends Component {
       <Header></Header>
       <Menu onClick={this.handleClick.bind(this)} selectedKeys={[this.state.current]} mode="horizontal">
         <Menu.Item key="home">
-          <Link to="/spa/ssr">详情</Link>
+          <Link to="/spa/ssr">首页</Link>
         </Menu.Item>
         <Menu.Item key="about">
           <Link to="/spa/ssr/about">关于</Link>
