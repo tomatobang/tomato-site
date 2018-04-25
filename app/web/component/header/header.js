@@ -30,11 +30,13 @@ export default class Header extends Component {
       <header className="header">
         <h1>
           <img src={require('asset/images/logo.png')} />
-          <a href="/" className="router-link-active">
+          <a href="/" className="logo-title router-link-active">
             TomatoBang
           </a>
         </h1>
+        
         <Menu
+          className="header-menu"
           onClick={this.handleClick.bind(this)}
           selectedKeys={[this.state.current]}
           mode="horizontal"

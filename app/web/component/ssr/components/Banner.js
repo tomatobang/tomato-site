@@ -28,11 +28,11 @@ export default function Banner(props) {
             style={{ transform: 'translateX(-64px)' }}
           />
         </div>
-        <h1 key="h1">TomatoBang</h1>
-        <p key="content">For your better life and work!</p>
+        <h1 key="h1">For your better life and work!</h1>
+        <p key="content"> let's get started!</p>
         <div key="button" className="button-wrapper">
           <a
-            href="https://github.com/tomatobang/tomato-ionic"
+            href="https://github.com/tomatobang"
             target="_blank"
             rel="noopener noreferrer"
           >

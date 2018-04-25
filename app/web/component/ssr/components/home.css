@@ -1,11 +1,28 @@
-.tomatobang-carousel{
-    width: 360px;
-    position: absolute !important;
-    left: 50%;
-    top:0px;
+.container .ant-carousel {
+    display: inline-block;
+    width: 50% !important;
+    vertical-align: middle;
 }
-.banner-wrapper{
+
+.tomatobang-carousel {}
+
+.banner-wrapper {
     position: relative;
-    height: 720px;
-    background: #eee;
+    background:rgba(255,99,71,.1);
+    text-align: center;
+}
+
+.title-line-wrapper {
+    position: relative;
+    height: 1px;
+}
+
+.banner-title-wrapper {
+    display: inline-block;
+    width: 50%;
+}
+
+.banner-title-wrapper h1 {
+    margin: 5px 30px;
+    font-size: 40px;
 }

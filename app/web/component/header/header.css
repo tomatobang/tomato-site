@@ -2,33 +2,33 @@
 @import "../../asset/css/global.css";
 .header {
   height: 80px;
-  background-color: #20a0ff;
   color: #fff;
   top: 0;
   left: 0;
-  width: 100%;
   height: 80px;
   line-height: 80px;
   z-index: 100;
-  position: relative
 }
-
-.header .container {
+.header-menu{
+ float: right;
+ margin-right: 20px;
+}
+.container {
   height: 100%;
   box-sizing: border-box;
-  width: 1140px;
+  width: 100% !important;
   padding: 0 30px;
   margin: 0 auto;
 }
-
 .header h1 {
-  float: left;
+  width: 30%;
+  display: inline-block;
   font-size: 32px;
   font-weight: 400
 }
 
 .header h1 a {
-  color: #fff;
+  color: tomato;
   text-decoration: none;
 }
 
@@ -72,7 +72,7 @@
 }
 
 @media (max-width: 700px) {
-  .header .container {
+  .container {
     padding: 0 12px
   }
 }

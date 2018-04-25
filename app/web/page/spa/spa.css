@@ -18,7 +18,7 @@
 }
 
 .redux-btn-add{
-    background-color: #1CB94A;
+    background-color: tomato;
     color: white;
     text-align: center;
     line-height: 40px;
@@ -33,11 +33,10 @@
     width: 60px;
     line-height: 30px;
     height: 30px;
-    vertical-align: middle;
     text-align: center;
 }
 
 .spa-title{
     margin-top: 40px;
-    text-align: center;
+    text-align: left;
 }

@@ -102,12 +102,6 @@ class Home extends Component {
             </div>
           </div>
         </div>
-        <QueueAnim delay="500" type="bottom">
-          <div key="123" className="redux-btn-add" onClick={() => add(item)}>
-            Add
-          </div>
-          <div key="234">this is nosense message</div>
-        </QueueAnim>
       </div>
     );
   }
@@ -119,5 +113,11 @@ const mapStateToProps = state => {
     list: state.list,
   };
 };
+
+{/* <QueueAnim delay="500" type="bottom">
+<div key="123" className="redux-btn-add" onClick={() => add(item)}>
+  马上使用 >>> 
+</div>
+</QueueAnim> */}
 
 export default connect(mapStateToProps, { add, del })(Home);
