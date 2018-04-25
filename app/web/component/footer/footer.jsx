@@ -7,7 +7,7 @@ export default class Footer extends Component {
   render() {
     return <footer className="footer">
       <div className="container">
-        <a href="/" className="router-link-active">here is the footer</a>
+        <a href="/" className="router-link-active">yipeng.info@MIT</a>
       </div>
     </footer>;
   }

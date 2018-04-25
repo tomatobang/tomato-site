@@ -2,7 +2,7 @@
 const data = {
   list: [{
     title: `好玩.`,
-    summary: '管理你 <b>工作&生活</b> 的最佳工具.',
+    summary: '管理你 工作&生活的最佳工具.',
     hits: 550,
     url: 'https://www.tomatobang.com'
   }, {

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { add, del } from 'component/ssr/actions';
-import { Carousel } from 'antd';
 import Banner from './Banner';
 import Feature from './feature';
 import './home.css';
@@ -14,27 +13,27 @@ class Home extends Component {
   static fetch() {
     return Promise.resolve({
       list: [
-        {
-          id: 0,
-          title: '好玩.',
-          summary: '管理你 <b>工作&生活</b> 的最佳工具.',
-          hits: 550,
-          url: 'https://www.tomatobang.com',
-        },
-        {
-          id: 1,
-          title: '语音记录',
-          summary: '让你迷上自己的声音.',
-          hits: 550,
-          url: 'https://www.tomatobang.com',
-        },
-        {
-          id: 2,
-          title: '支持多端同步',
-          summary: 'PC端与 App 端神奇同步.',
-          hits: 278,
-          url: 'https://www.tomatobang.com',
-        },
+        // {
+        //   id: 0,
+        //   title: '好玩.',
+        //   summary: '管理你 工作&生活的最佳工具.',
+        //   hits: 550,
+        //   url: 'https://www.tomatobang.com',
+        // },
+        // {
+        //   id: 1,
+        //   title: '语音记录',
+        //   summary: '让你迷上自己的声音.',
+        //   hits: 550,
+        //   url: 'https://www.tomatobang.com',
+        // },
+        // {
+        //   id: 2,
+        //   title: '支持多端同步',
+        //   summary: 'PC端与 App 端神奇同步.',
+        //   hits: 278,
+        //   url: 'https://www.tomatobang.com',
+        // },
       ],
     }).then(data => {
       return data;
@@ -47,7 +46,7 @@ class Home extends Component {
     const item = {
       id,
       title: `好玩-${id}`,
-      summary: '管理你 <b>工作&生活</b> 的最佳工具.',
+      summary: '管理你 工作&生活的最佳工具.',
       hits: 550 + id,
       url: 'https://www.tomatobang.com',
     };
@@ -56,26 +55,6 @@ class Home extends Component {
         <Banner isMobile="false" />
         <Feature />
         <div className="container">
-          <Carousel horizontal="true" className="tomatobang-carousel">
-            <div>
-              <img alt="banner" src={require('asset/images/banner/tab1.png')} />
-            </div>
-            <div>
-              <img alt="banner" src={require('asset/images/banner/tab2.png')} />
-            </div>
-            <div>
-              <img
-                alt="banner"
-                src={require('asset/images/banner/tab3-1.png')}
-              />
-            </div>
-            <div>
-              <img alt="banner" src={require('asset/images/banner/tab4.png')} />
-            </div>
-          </Carousel>
-          <TweenOneGroup>
-            <div key="0">demo</div>
-          </TweenOneGroup>
           <div className="row row-offcanvas row-offcanvas-right">
             <div className="col-xs-12 col-sm-9">
               <ul className="smart-artiles" id="articleList">

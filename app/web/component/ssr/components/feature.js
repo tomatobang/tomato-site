@@ -11,7 +11,7 @@ const TweenOneGroup = TweenOne.TweenOneGroup;
 const featuresCN = [
   {
     title: '好玩',
-    content: '管理你 <b>工作&生活</b> 的最佳工具.',
+    content: '管理你 工作&生活的最佳工具.',
     src: 'https://gw.alipayobjects.com/zos/rmsportal/VriUmzNjDnjoFoFFZvuh.svg',
     color: '#13C2C2',
     shadowColor: 'rgba(19,194,194,.12)',
@@ -181,12 +181,9 @@ export default class Feature extends React.PureComponent {
               }}
               location="page1-wrapper"
             >
-              Feature
+              番茄帮
             </Parallax>
           )}
-          <h2>
-            What can <span>Pro</span> do for you{' '}
-          </h2>
           <div className="title-line-wrapper page1-line">
             <div className="title-line" />
           </div>
